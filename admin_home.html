@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKTC Municipality</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Aptos', sans-serif; /* Use Aptos font */
+        }
+
+        body {
+            background-color: #efecec9a; /* White background color */
+        }
+
+        header {
+            background-color: #ffffff61; /* Adjust opacity here */
+            color: rgb(8, 8, 8);
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #f47a0980; /* Adjust opacity here */
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between; /* Change to space-between */
+            align-items: center;
+            margin-bottom: 1px; /* Reduce space between header and content */
+        }
+
+        nav a {
+            color: rgb(15, 14, 14);
+            text-decoration: none;
+            margin: 0 10px; /* Reduce space between navigation links */
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .latest-news {
+            background-color: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #0e0d0d; /* Add border around the latest news section */
+            margin-bottom: 20px; /* Add some margin at the bottom */
+            border-radius: 8px; 
+            background-color: #f47b0953; /* Adjust opacity here */
+            justify-content: space-between; /* Change to space-between */
+        
+        }
+
+        .latest-news h2 {
+            color: #333;
+        }
+
+        .news-item {
+            margin-bottom: 15px;
+            text-align: center;
+            border: 1px solid #ccc; /* Add border around each news item */
+            padding: 10px; /* Add padding inside the news item */
+            border-radius: 8px;
+        }
+
+        .news-item h3 {
+            color: #0066cc;
+        }
+
+        .news-item .date {
+            font-style: italic;
+        }
+        .reduced-size {
+            width: 200px; /* Set the width you want */
+            height: auto; /* Maintains the aspect ratio */
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .content {
+            background-color: #e5ded79c;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #070707;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .img-news-header {
+            width: 100%; 
+            height: 350px; /* Maintain aspect ratio */
+            margin-bottom: 1px; /* Space below the image */
+            border-radius: 8px; /* Match border radius of container */
+        }
+
+        .contact-link {
+            position: fixed;
+            top: 20px; /* Adjust top position as needed */
+            right: 20px; /* Adjust right position as needed */
+            padding: 10px;
+            color: #050505; /* Text color of the link */
+            border-radius: 5px;
+        }
+
+        .sidebar {
+            background-color: #efecec9a;
+            padding: 20px;
+            width: 200px ; /* Adjust sidebar width to cover the full width minus 20px */
+            height: calc(100vh - 96px); /* Adjust sidebar height to cover the full height minus 20px */
+            top: 96px; /* Move sidebar to the top by 20px */
+            left: 0;
+            position:fixed;
+            overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            color:#050505;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            display: inline-block; /* Ensure each anchor element takes up its own space */
+            padding: 10px; /* Add padding to create boxes */
+            transition: box-shadow 0.3s;
+            border-radius: 5px;
+        }
+
+        .sidebar ul li a:hover {
+            box-shadow: 0 2px 4px rgba(12, 12, 12, 0.91); /* Add shadow effect on hover */
+            background-color: rgba(255, 255, 255, 0.604); /* Add background color on hover */
+        }
+
+        .admin-content {
+            margin-left: 200px; /* Adjust according to sidebar width */
+            padding: 20px;
+        }
+
+        /* Additional styles for admin form */
+        .admin-content form {
+            background-color: rgba(241, 240, 239, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-content form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .admin-content form input[type="text"],
+        .admin-content form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .admin-content form button[type="submit"] {
+            background-color: #0b5ba9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        
+        .admin-content form button[type="submit"]:hover {
+            background-color: #08356e;
+        }
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(241, 240, 239, 0.9); /* Adjust opacity here */
+            min-width: 160px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #0b5ba9; /* Adjust color */
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: rgba(11, 91, 169, 0.1); /* Adjust hover background color */
+        }
+
+        /* Dropdown menu active state */
+        .active .dropdown-menu {
+            display: block;
+        }
+        
+       
+       
+    </style>
+</head>
+<body>
+    <header>
+        <h1>KKTC Municipality</h1>
+    </header>
+    <nav>
+        <div>
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="#"><i class="fas fa-info-circle"></i> About KKTC Municipality</a>
+            <a href=""><i class="fas fa-tools"></i> Services</a>
+            <a href="#"><i class="fas fa-newspaper"></i> News</a>
+        </div>
+        <div class="row"> 
+            <div class="search-bar">
+                <input type="text" name="search" placeholder="Search...">
+                <button type="submit"><i class="fas fa-search fa-lg"></i></button>
+            Welcome : ADMIN </strong>
+            <a href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </div>
+    </nav>
+    <div class = "img-news-header">
+        <img src="https://www.pastpathways.com/wp-content/uploads/2024/02/Reasons-Why-Its-Worth-Visiting-North-Cyprus.jpg" alt="Latest News Header" class="img-news-header">
+    </div>
+    <div class="latest-news">
+        <h1>Latest News</h1>
+        <br>
+<div class="latest-news">
+        <img src="https://cdnuploads.aa.com.tr/uploads/Contents/2019/09/15/thumbs_b_c_c3b675f3dcaf107727796c812f5be4cd.jpg?v=155348" class="reduced-size">
+        <div class="news-item">
+            <h3><a href="link-to-full-article">Turkey aims to reduce prices of food </a></h3>
+            <p class="date">10 MAY 2024</p>
+            <br>
+            <p>Minister Olgun Amcaoglu from the Turkish Republic of Northern Cyprus (TRNC), along with Turkish Deputy Minister of Trade Mahmut Gurcan and Rifat Hisarciklioglu, President of..Read More »</p>
+        </div>
+    </div> <!-- Close the first latest-news div -->
+    
+    <div class="latest-news">
+        <br>
+        <img src="https://cdn.hangiev.com/magusa-baykal-satilik-daire-202306001177600003796117DBRY0LK.jpg" class="reduced-size">
+        <div class="news-item">
+            <h3><a href="link-to-full-article">TRNC plans reduction of housing for international students in Famagusta </a></h3>
+            <p class="date">18 MAY 2024</p>
+            <br>
+            <p>The acceleration of house price growth in the country is mainly due to an increase in demand and a decrease in supply in the market, which is reflected in the increase in the cost of both apartments and houses...Read More »</p>
+        </div>
+    </div> <!-- Close the second latest-news div -->
+    
+    <div class="container">
+        <img src="https://mediap.flypgs.com/awh/770/418/files/Sehirler-long-tail/Kibris/girne-kuzey-kibris.jpg" alt="Cyprus Image">
+        <div class="content">
+            <h1>About Cyprus</h1>
+            <br>
+            <p>Cyprus is an island country in the Eastern Mediterranean and the third largest and third most populous island in the Mediterranean, located south of Turkey, west of Syria and Lebanon, northwest of Israel, north of Egypt, and southeast of Greece.</p>
+            <p>It is known for its rich history, stunning beaches, and vibrant culture. The capital city is Nicosia.</p>
+            <p>Explore the beauty of Cyprus with its ancient ruins, picturesque villages, and delicious cuisine.</p>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <ul>
+         <div class ="admin-links">
+            <li><a href="#">Manage website <i class="fa fa-gear fa-spin" style="font-size:20px"></i></a></li>
+            <br>
+            <li><a href="#">Manage Content  <i class="fas fa-tools fa-1x"></i></a></li>
+            <br>
+            <li><a href="#"> Manage Accounts <i class="fas fa-user fa-1x"></i> </a></li>
+            <!-- Add more sidebar items as needed -->
+         </ul>
+            </div>
+    </div>
+    
+</div>
+</body>
+</html>

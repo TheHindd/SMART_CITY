@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKTC Municipality</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fontawesome.com/icons/city?f=classic&s=regular">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Aptos', sans-serif; /* Use Aptos font */
+        }
+
+        body {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover; 
+            background-color: #efecec9a; /* White background color */
+        }
+
+        header {
+            background-color: #ffffff61; /* Adjust opacity here */
+            color: rgb(8, 8, 8);
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: rgba(244, 122, 9, 0.5); /* Adjust opacity here */
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between; /* Change to space-between */
+            align-items: center;
+            margin-bottom: 20px; /* Reduce space between header and content */
+        }
+
+        nav a {
+            color: rgb(8, 8, 8);
+            text-decoration: none;
+            margin: 0 10px; /* Reduce space between navigation links */
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .contact-us {
+            margin-left: 1400px;
+        }
+        .important-numbers {
+            background-color: #ffffff61;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 800px;
+            text-align: left;
+        }
+        .important-numbers h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .important-numbers ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .important-numbers li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .important-numbers li span {
+            font-weight: bold;
+        }
+        .contact-us {
+                    margin-left: 1400px;
+                }
+
+</style>
+</head>
+<body>
+<header>
+<h1>KKTC Municipality</h1>
+<div>
+    
+    <div class = "contact-us">
+        <a href="#"><i style="margin-right: 8px;">Contact Us</i>
+        </a>
+    </div>
+</div>
+</header>
+<nav>
+    <div>
+        <a href="{{url_for('home')}}"><i class="fas fa-home"></i> Home</a>
+        <a href="#"><i class="fas fa-info-circle"></i> About KKTC Municipality</a>
+        <a href="#"><i class="fas fa-tools"></i> Services</a>
+        <a href="#"><i class="fas fa-newspaper"></i> News</a>
+        <a href="#"><i class="fas fa-calendar"></i> Events</a>
+
+    </div>
+    <div class="row">    
+        <a href="#"><i class="fas fa-sign-in-alt"></i> Login</a>
+    </div>
+</nav>
+
+
+<header>
+<h1>IMPORTANT PHONE NUMBERS</h1>
+</header>
+
+
+
+<section class="important-numbers">
+<h2>Important Phone Numbers - Famagusta Municipality</h2>
+<ul>
+    <li><span>Municipality Office:</span> +90 392 366 53 00</li>
+    <li><span>Emergency Services:</span> 112</li>
+    <li><span>Fire Department:</span> +90 392 366 42 43</li>
+    <li><span>Police Department:</span> +90 392 366 53 10</li>
+    <li><span>Water Services:</span> +90 392 366 53 20</li>
+    <li><span>Electricity Services:</span> +90 392 366 53 30</li>
+    <li><span>Public Health Services:</span> +90 392 366 53 40</li>
+    <li><span>Waste Management:</span> +90 392 366 53 50</li>
+</ul>
+</section>
+
+
+
+
+</body>
+</html>

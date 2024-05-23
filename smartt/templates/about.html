@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKTC Municipality</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Aptos', sans-serif; /* Use Aptos font */
+        }
+
+        body {
+            background-color: #efecec9a; /* White background color */
+        }
+
+        header {
+            background-color: #ffffff61; /* Adjust opacity here */
+            color: rgb(8, 8, 8);
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #f47a0980; /* Adjust opacity here */
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between; /* Change to space-between */
+            align-items: center;
+            margin-bottom: 1px; /* Reduce space between header and content */
+        }
+
+        nav a {
+            color: rgb(15, 14, 14);
+            text-decoration: none;
+            margin: 0 15px; /* Reduce space between navigation links */
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .latest-news {
+            background-color: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #0e0d0d; /* Add border around the latest news section */
+            margin-bottom: 20px; /* Add some margin at the bottom */
+            border-radius: 8px; 
+            background-color: #e7ded553; /* Adjust opacity here */
+            justify-content: space-between; /* Change to space-between */
+        
+        }
+
+        .latest-news h2 {
+            color: #333;
+        }
+
+        .news-item {
+            margin-bottom: 15px;
+            text-align: center;
+            border: 1px solid #ccc; /* Add border around each news item */
+            padding: 10px; /* Add padding inside the news item */
+            border-radius: 8px;
+        }
+
+        .news-item h3 {
+            color: #0066cc;
+        }
+
+        .news-item .date {
+            font-style: italic;
+        }
+        .reduced-size {
+            width: 200px; /* Set the width you want */
+            height: auto; /* Maintains the aspect ratio */
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .content {
+            background-color: #e5ded79c;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #070707;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .img-news-header {
+            width: 100%; 
+            height: 350px; /* Maintain aspect ratio */
+            margin-bottom: 1px; /* Space below the image */
+            border-radius: 8px; /* Match border radius of container */
+        }
+
+        .message-section {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .mayor-image {
+            max-width: 450px;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .form-wrapper {
+            flex: 1;
+        }
+
+        .form-container {
+            margin-bottom: 15px;
+        }
+        .form-container-con{
+            margin-bottom: 12px;
+            font-weight: bold;
+
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .big-input {
+            height: 100px; /* Adjust this value as needed for the message input height */
+        }
+
+        .contact-us {
+            margin-left: 1400px;
+        }
+
+        .complaints {
+            padding: 20px; /* Adjusted for mobile responsiveness */
+            text-align: center;
+            background-color: #FDEDE4;
+        }
+
+        .complaints h1 {
+            text-decoration: underline;
+            margin-bottom: 20px;
+            color: #E78950;
+        }
+
+        .complaints p {
+            color: #000000;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap; /* Adjusted for mobile responsiveness */
+            justify-content: space-between;
+        }
+
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button.send-message, .button.upload-image {
+            background-color: #E78950;
+            color: #FFFFFF;
+            margin: 5px; /* Adjusted for mobile responsiveness */
+        }
+
+        /* Language button style */
+        .language-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #FFFFFF;
+            color: #E78950;
+            margin-right: 20px;
+        }
+
+        /* Media queries for mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo img {
+                margin-bottom: 10px; /* Adjusted for mobile responsiveness */
+            }
+
+            .navigation {
+                margin-top: 10px;
+            }
+
+            .search-section {
+                margin-top: 10px;
+            }
+
+            .login-button-container {
+                margin-top: 10px;
+            }
+
+            .button-group {
+                flex-direction: column; /* Adjusted for mobile responsiveness */
+                align-items: center; /* Adjusted for mobile responsiveness */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>KKTC Municipality</h1>
+
+        <div class = "contact-us">
+            <a href="#"><i style="margin-right: 8px;">Contact Us</i>
+            </a>
+        </div>
+    </header>
+    <nav>
+        <div>
+            <a href="{{url_for('home')}}"><i class="fas fa-home"></i> Home</a>
+            <a href="{{url_for('about')}}"><i class="fas fa-info-circle"></i> About KKTC Municipality</a>
+            <a href="{{url_for('services')}}"><i class="fas fa-tools"></i> Services</a>
+            <a href="#"><i class="fas fa-newspaper"></i> News</a>
+            <a href="#"><i class="fas fa-calendar"></i> Events</a>
+        </div>
+        <div class="row"> 
+            <div class="search-bar">
+                <input type="text" name="search" placeholder="Search...">
+                <button type="submit"><i class="fas fa-search fa-lg"></i></button>
+            <a href="{{url_for('user_profile')}}"><i class = "fas fa-user"></i></a>    
+            <a href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </div>
+    </nav>
+
+        
+        <div class="latest-news">
+            <img src="https://www.kibrispostasi.com/imagecache/newsimage/news/g/ga/gazimausa-belediyesi_1582908935.jpg" alt="Cyprus Image">
+            <div class="news-item">
+                <h1>About KKTC Municipality</h1>
+                <br>
+                <p>One of the most significant coastal towns in the Turkish Republic of Northern Cyprus and the Mediterranean Sea is Famagusta. The city is a major hub for education and tourism as well. The Lusignan era saw the majority of Famagusta's development, and the city is home to several historical relics from the Latin Kingdoms, the Venetians, the Turks, and the Roman and Eastern Roman Empires. The Venetian Palace, Othello Castle, St. Barnabas Monastery, Lala Mustafa Pasha Mosque (St. Nicholas Cathedral), and golden beaches are a few of these.
+                    The Turkish Municipality of Famagusta was initially founded in 1958. The 8,000–10,000 Turkish residents and Turkish neighborhoods were served by the Famagusta Turkish Municipality, which was granted legal standing in 1960 by the 1960 Constitution due to laws guaranteeing the distinct existence of Turkish and Greek municipalities. This arrangement lasted until 1974.</p>
+            </div>
+        </div> 
+    </div>
+</body>
+</html>

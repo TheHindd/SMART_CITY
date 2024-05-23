@@ -66,6 +66,11 @@ def register():
         
     return render_template('register.html')
 
+@app.route('/contact_us')
+def contact_us():
+    return render_template('contact_us.html')
+
+
 @app.route('/services')
 def services():
     return render_template('services.html')

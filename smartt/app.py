@@ -39,10 +39,10 @@ def login():
             return render_template('login.html', info='Invalid Password')
         else:
             session['user_name'] = name1  # Store the user's name in the session
-            if "2024" in pwd:
+            if "admin2024" in name1:
                 return render_template('admin_home.html', name=name1, info="Welcome Admin")
             else:
-                return redirect(url_for('hello_world'))  # Redirect to the home page
+                return redirect(url_for('home'))  # Redirect to the home page
     
     return render_template('login.html')
 
@@ -70,6 +70,11 @@ def register():
 def services():
     return render_template('services.html')
 
+@app.route('/admin_home')
+def admin_home():
+    return render_template('admin_home.html')
+
+
 @app.route('/user_profile')
 def user_profile():
     return render_template('user_profile.html')
@@ -78,6 +83,9 @@ def user_profile():
 def imp_num():
     return render_template('important_num.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run()

@@ -222,7 +222,7 @@
     <nav>
         <div>
             <a href="{{url_for('home')}}"><i class="fas fa-home"></i> Home</a>
-            <a href="#"><i class="fas fa-info-circle"></i> About KKTC Municipality</a>
+            <a href="{{url_for('about')}}"><i class="fas fa-info-circle"></i> About KKTC Municipality</a>
             <a href="{{url_for('services')}}"><i class="fas fa-tools"></i> Services</a>
             <a href="#"><i class="fas fa-newspaper"></i> News</a>
             <a href="#"><i class="fas fa-calendar"></i> Events</a>
@@ -230,7 +230,7 @@
         <div class="search-bar">
             <input type="text" name="search" placeholder="Search...">
             <button type="submit"><i class="fas fa-search fa-lg"></i></button>
-            <a href="#"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="{{url_for('login')}}"><i class="fas fa-sign-in-alt"></i> Login</a>
         </div>
     </nav>
     <div class="container">
@@ -239,12 +239,9 @@
         </header>
         <img src="https://via.placeholder.com/150" alt="User Profile Image" class="profile-image">
         <div class="form-container">
-            <label for="name">First Name:</label>
+            <label for="name">Name:</label>
             <input type="text" id="name" name="name">
             
-            <label for="name">Last Name:</label>
-            <input type="text" id="name" name="name">
-
             <label for="email">Email:</label>
             <input type="email" id="email" name="email">
             

@@ -86,7 +86,7 @@
 <div>
     
     <div class = "contact-us">
-        <a href="#"><i style="margin-right: 8px;">Contact Us</i>
+        <a href="{{url_for('contact_us')}}"><i style="margin-right: 8px;">Contact Us</i>
         </a>
     </div>
 </div>
@@ -100,8 +100,13 @@
         <a href="#"><i class="fas fa-calendar"></i> Events</a>
 
     </div>
-    <div class="row">    
-        <a href="#"><i class="fas fa-sign-in-alt"></i> Login</a>
+    <div class="row">     
+     <div class="search-bar">
+                <input type="text" name="search" placeholder="Search...">
+                <button type="submit"><i class="fas fa-search fa-lg"></i></button>
+            <a href="{{url_for('user_profile')}}"><i class = "fas fa-user"></i></a>    
+            <a href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </div>
     </div>
 </nav>
 

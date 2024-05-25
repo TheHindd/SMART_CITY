@@ -49,40 +49,40 @@
         }
 
         nav {
-            background-color: rgba(244, 122, 9, 0.5);
+            background-color: #d34617f4;
             padding: 10px 0;
-            text-align: center;
-            width: 100%;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
             margin-bottom: 20px;
         }
 
-        nav a {
+        nav .nav-left {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .nav-left h1 {
+            margin: 0 20px;
+            color: #fff;
+        }
+
+        nav .nav-left a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        nav .nav-right a {
             color: #0f0e0e;
             text-decoration: none;
             margin: 0 15px;
             font-size: 18px;
             font-weight: bold;
-        }
-
-        .search-bar {
-            display: flex;
-            align-items: center;
-        }
-
-        .search-bar input {
-            padding: 5px;
-            font-size: 16px;
-        }
-
-        .search-bar button {
-            padding: 5px;
-            font-size: 16px;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
         }
 
         .container {
@@ -144,6 +144,11 @@
             border-radius: 5px;
             margin-bottom: 10px;
             font-size: 16px;
+            transition: transform 0.2s;
+        }
+
+        .history-item:hover {
+            transform: scale(1.05);
         }
 
         .notification-toggle {
@@ -192,8 +197,7 @@
                 });
                 document.querySelector('label[for="notifications"]').innerText = 'Bildirimleri Aç:';
                 document.querySelector('.btn').innerText = 'Kaydet';
-            } 
-            else {
+            } else {
                 languageButton.innerText = 'EN'; // Change button text to English
                 // Change text content to English
                 document.querySelector('.header h1').innerText = 'User Profile';
@@ -212,30 +216,24 @@
     </script>
 </head>
 <body>
-    <header>
-        <h1>KKTC Municipality</h1>
-        <div class="contact-us">
-            <a href="#"><i class="fa fa-envelope"></i> Contact Us</a>
-        </div>
-        <button class="language-button" onclick="changeLanguage()">EN</button>
-    </header>
     <nav>
-        <div>
+        <div class="nav-left">
+            <h1>KKTC Municipality</h1>
             <a href="{{url_for('home')}}"><i class="fas fa-home"></i> Home</a>
             <a href="{{url_for('about')}}"><i class="fas fa-info-circle"></i> About KKTC Municipality</a>
             <a href="{{url_for('services')}}"><i class="fas fa-tools"></i> Services</a>
             <a href="#"><i class="fas fa-newspaper"></i> News</a>
-            <a href="#"><i class="fas fa-calendar"></i> Events</a>
+            <a href="{url_for('events')}"><i class="fas fa-calendar"></i> Events</a> 
+            <a href="{{url_for('contact_us')}}"><i class="fas fa-phone"></i> Contact Us</a>
         </div>
-        <div class="search-bar">
-            <input type="text" name="search" placeholder="Search...">
-            <button type="submit"><i class="fas fa-search fa-lg"></i></button>
+        <div class="nav-right">
+            <a href="{{url_for('user_profile')}}"><i class="fas fa-user"></i></a>
             <a href="{{url_for('login')}}"><i class="fas fa-sign-in-alt"></i> Login</a>
         </div>
     </nav>
     <div class="container">
         <header class="header">
-            <h1>User Profile</h1>
+            <h2>Profile</h2>
         </header>
         <img src="https://via.placeholder.com/150" alt="User Profile Image" class="profile-image">
         <div class="form-container">
@@ -251,12 +249,7 @@
             <label for="address">Address:</label>
             <textarea id="address" name="address" rows="3"></textarea>
         </div>
-        
-        <div class="notification-toggle">
-            <label for="notifications">Turn on Notifications:</label>
-            <input type="checkbox" id="notifications" name="notifications">
-        </div>
-        <button type="submit" class="btn">Save</button>
+        <button class="btn">Save</button>
     </div>
 </body>
 </html>

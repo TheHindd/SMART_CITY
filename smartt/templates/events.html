@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKTC Municipality Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f2f2f2;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: #d34617f4;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .nav-left {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .nav-left h1 {
+            margin: 0 20px;
+            color: #fff;
+        }
+
+        nav .nav-left a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: rgb(15, 14, 14);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .event-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .event-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .event-content {
+            width: 100%;
+        }
+
+        .event-item h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .event-item p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .event-item:hover {
+            transform: scale(1.05);
+        }
+
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .event-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <h1>KKTC Municipality</h1>
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="{{url_for('about')}}"><i class="fas fa-info-circle"></i> About KKTC Municipality</a>
+            <a href="{{url_for('services')}}"><i class="fas fa-tools"></i> Services</a>
+            <a href="#"><i class="fas fa-newspaper"></i> News</a>
+            <a href="#"><i class="fas fa-calendar"></i> Events</a> 
+            <a href="{{url_for('contact_us')}}"><i class="fas fa-phone"></i> Contact Us</a>
+        </div>
+        <div>
+            <a href="{{url_for('user_profile')}}"><i class="fas fa-user"></i></a>
+            <a href="{{url_for('login')}}"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Upcoming Events</h1>
+        <div class="event-grid">
+            <div class="event-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKeIEPORY7XGHLY-9FBIN5J-gH3ZYxIj896-DWnCP_iNdKQwdVxwFDlcq5dMBw8hXjZ-E&usqp=CAU" alt="Event Image">
+                <div class="event-content">
+                    <h3>Self-love retreat</h3>
+                    <h2>21- 25 June 2024</h2>
+                    <p>Embark on a transformational retreat and experience a lot of Joy,helping you to step away from everyday routine, to reset your entire being,guiding you towards loving yourself more deeply.This will provide and incredible beatifull and deep transformation for you.
+                        11:00 A.M.</p>
+                </div>
+            </div>
+            <div class="event-item">
+                <img src="https://cdn-az.allevents.in/events6/banners/fde66168d2c7ee7283c5fad1003d8576938e5f445cb1e9be8c894004fa9daebc-rimg-w1200-h628-dcc2a27f-gmir?v=1716561904" alt="Event Image">
+                <div class="event-content">
+                    <h3>REGGAE SUNJAM 2024</h3>
+                    <h2>20- 23 June 2024</h2>
+                    <p>The first of the classic Bedis Reggae parties takes place on 20th of May. On this night, where you can dance freely on the sand by the sea, the energy will rise with the Bunfyah concert, and DJ Monday sets before and after the concert will keep the pulse of the night</p>
+                </div>
+            </div>
+            <div class="event-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBO3nn67aq1Vm5gaPyseHmeuWn2VZ_okF1XVn-JjhL7Q&s" alt="Event Image">
+                <div class="event-content">
+                    <h3>EMU Spring FEST 2024</h3>
+                    <h2>15 - 18 May 2024</h2>
+                    <p>The Spring Festival also hosts music groups, singers, academicians, journalists from abroad and many other cultural and social activities to have the students experience unforgettable moments and get the opportunity to meet diverse characters and enjoy new sensations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

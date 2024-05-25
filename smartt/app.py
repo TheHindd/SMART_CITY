@@ -92,5 +92,9 @@ def imp_num():
 def about():
     return render_template('about.html')
 
+@app.route('/events')
+def events():
+    return render_template('events.html')
+
 if __name__ == '__main__':
     app.run()

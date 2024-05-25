@@ -12,30 +12,41 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Aptos', sans-serif; /* Use Aptos font */
+            font-family: Arial, sans-serif;
         }
 
         body {
-            background-color: #efecec9a; /* White background color */
-        }
-
-        header {
-            background-color: #ffffff61; /* Adjust opacity here */
-            color: rgb(8, 8, 8);
-            padding: 10px;
-            text-align: center;
+            background-color: #f2f2f2;
+            color: #333;
+            line-height: 1.6;
         }
 
         nav {
-            background-color: #f47a0980; /* Adjust opacity here */
+            background-color: #d34617f4;
             padding: 10px 0;
-            text-align: center;
             display: flex;
-            justify-content: space-between; /* Change to space-between */
+            justify-content: space-between;
             align-items: center;
-            margin-bottom: 1px; /* Reduce space between header and content */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
+        nav .nav-left {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .nav-left h1 {
+            margin: 0 20px;
+            color: #fff;
+        }
+
+        nav .nav-left a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
         nav a {
             color: rgb(15, 14, 14);
             text-decoration: none;
@@ -103,15 +114,12 @@
             margin-bottom: 20px;
         }
 
-        p {
-            line-height: 1.6;
-        }
+        
 
         .img-news-header {
             width: 100%; 
             height: 350px; /* Maintain aspect ratio */
             margin-bottom: 1px; /* Space below the image */
-            border-radius: 8px; /* Match border radius of container */
         }
 
         .message-section {
@@ -259,31 +267,27 @@
             }
         }
 
+        p{
+            font-family: Arial, Helvetica, sans-serif;
+            color: #0e0d0d;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>KKTC Municipality</h1>
-
-        <div class = "contact-us">
-            <a href="{{url_for('contact_us')}}"><i style="margin-right: 8px;">Contact Us</i>
-            </a>
-        </div>
-    </header>
     <nav>
-        <div>
+        <div class="nav-left">
+            <h1>KKTC Municipality</h1>
             <a href="#"><i class="fas fa-home"></i> Home</a>
             <a href="{{url_for('about')}}"><i class="fas fa-info-circle"></i> About KKTC Municipality</a>
             <a href="{{url_for('services')}}"><i class="fas fa-tools"></i> Services</a>
             <a href="#"><i class="fas fa-newspaper"></i> News</a>
-            <a href="#"><i class="fas fa-calendar"></i> Events</a>
+            <a href="{url_for('events')}"><i class="fas fa-calendar"></i> Events</a> 
+            <a href="{{url_for('contact_us')}}"><i class= "fas fa-phone"></i> Contact Us</a>
         </div>
-        <div class="row"> 
-            <div class="search-bar">
-                <input type="text" name="search" placeholder="Search...">
-                <button type="submit"><i class="fas fa-search fa-lg"></i></button>
-            <a href="{{url_for('user_profile')}}"><i class = "fas fa-user"></i></a>    
-            <a href="{{ url_for('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <div>
+             <a href="{{url_for('user_profile')}}"><i class="fas fa-user"></i></a>
+            <a href="{{url_for('login')}}"><i class="fas fa-sign-in-alt"></i> Login</a>
         </div>
     </nav>
     <div class = "img-news-header">
@@ -291,7 +295,6 @@
     </div>
     <div class="latest-news">
         <h1>Latest News</h1>
-        <br>
         <div class="latest-news">
             <img src="https://cdnuploads.aa.com.tr/uploads/Contents/2019/09/15/thumbs_b_c_c3b675f3dcaf107727796c812f5be4cd.jpg?v=155348" class="reduced-size">
             <div class="news-item">
@@ -318,8 +321,7 @@
             <div class="news-item">
                 <h1>About Cyprus</h1>
                 <br>
-                <p>Cyprus is an island country in the Eastern Mediterranean and the third largest and third most populous island in the Mediterranean, located south of Turkey, west of Syria and Lebanon, northwest of Israel, north of Egypt, and southeast of Greece.</p>
-                <p>It is known for its rich history, stunning beaches, and vibrant culture. The capital city is Nicosia.</p>
+                <p>Cyprus is an island country in the Eastern Mediterranean and the third largest and third most populous island in the Mediterranean, located south of Turkey, west of Syria and Lebanon, northwest of Israel, north of Egypt, and southeast of Greece.It is known for its rich history, stunning beaches, and vibrant culture. The capital city is Nicosia.</p>
                 <p>Explore the beauty of Cyprus with its ancient ruins, picturesque villages, and delicious cuisine.</p>
             </div>
         </div> 
@@ -332,7 +334,15 @@
             <header>
                 <h4>IF YOU HAVE ANYTHING YOU WOULD LIKE TO INFORM THE MAYOR ABOUT... LET US KNOW</h4>
             </header>
-            <img src="https://www.emu.edu.tr/media/posts_media/media_4290_en_1200.jpg" alt="Mayor" class="mayor-image"> 
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIpJotOZUAUfBQ6KilIwlVXo5imL74UsXzsF7mRqeE7w&s" alt="Mayor" class="mayor-image"> 
+            <p>Dear citizens,</p>
+            <p>As your mayor, I am committed to improving our community and enhancing the quality of life for all residents.</p>
+            <p>Your feedback is invaluable, and I encourage you to share your thoughts and concerns with us.</p>
+            <br>
+            <p>Best regards,
+            <br>
+            Mayor Süleyman Uluçay</p>
+            <br>
             <div class="latest-news">
                 <div class="form-wrapper">
                     <div class="form-container-con">

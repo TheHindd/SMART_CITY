@@ -134,4 +134,4 @@ def events():
 
 if __name__ == '__main__':
     init_db()  # Ensure the database and tables are initialized if not existing
-    app.run()
+    app.run() #TO RUN THE PROGRAM

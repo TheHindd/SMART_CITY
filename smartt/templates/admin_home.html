@@ -289,11 +289,107 @@
         .big-input {
             height: 100px; /* Adjust this value as needed for the message input height */
         }
+        .complaints {
+            padding: 20px; /* Adjusted for mobile responsiveness */
+            text-align: center;
+            background-color: #FDEDE4;
+        }
 
-        
+        .complaints h1 {
+            text-decoration: underline;
+            margin-bottom: 20px;
+            color: #E78950;
+        }
 
+        .complaints p {
+            color: #000000;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap; /* Adjusted for mobile responsiveness */
+            justify-content: space-between;
+        }
+
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button.send-message, .button.upload-image {
+            background-color: #E78950;
+            color: #FFFFFF;
+            margin: 5px; /* Adjusted for mobile responsiveness */
+        }
+
+        /* Language button style */
+        .language-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #FFFFFF;
+            color: #E78950;
+            margin-right: 20px;
+        }
+
+        /* Media queries for mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo img {
+                margin-bottom: 10px; /* Adjusted for mobile responsiveness */
+            }
+
+            .navigation {
+                margin-top: 10px;
+            }
+
+            .search-section {
+                margin-top: 10px;
+            }
+
+            .login-button-container {
+                margin-top: 10px;
+            }
+
+            .button-group {
+                flex-direction: column; /* Adjusted for mobile responsiveness */
+                align-items: center; /* Adjusted for mobile responsiveness */
+            }
+        }
+
+        p{
+            font-family: Arial, Helvetica, sans-serif;
+            color: #0e0d0d;
+            line-height: 1.6;
+        }
         
-       
        
     </style>
 </head>
@@ -323,7 +419,7 @@
         <img src="https://cdnuploads.aa.com.tr/uploads/Contents/2019/09/15/thumbs_b_c_c3b675f3dcaf107727796c812f5be4cd.jpg?v=155348" class="reduced-size">
         <div class="news-item">
             <h3><a href="link-to-full-article">Turkey aims to reduce prices of food </a></h3>
-            <p class="date">10 MAY 2024</p>
+            <p class="date">26 MAY 2024</p>
             <br>
             <p>Minister Olgun Amcaoglu from the Turkish Republic of Northern Cyprus (TRNC), along with Turkish Deputy Minister of Trade Mahmut Gurcan and Rifat Hisarciklioglu, President of..Read More »</p>
         </div>
@@ -334,7 +430,7 @@
         <img src="https://cdn.hangiev.com/magusa-baykal-satilik-daire-202306001177600003796117DBRY0LK.jpg" class="reduced-size">
         <div class="news-item">
             <h3><a href="link-to-full-article">TRNC plans reduction of housing for international students in Famagusta </a></h3>
-            <p class="date">18 MAY 2024</p>
+            <p class="date">25 MAY 2024</p>
             <br>
             <p>The acceleration of house price growth in the country is mainly due to an increase in demand and a decrease in supply in the market, which is reflected in the increase in the cost of both apartments and houses...Read More »</p>
         </div>
@@ -367,7 +463,15 @@
         <header>
             <h4>IF YOU HAVE ANYTHING YOU WOULD LIKE TO INFORM THE MAYOR ABOUT... LET US KNOW</h4>
         </header>
-        <img src="https://www.emu.edu.tr/media/posts_media/media_4290_en_1200.jpg" alt="Mayor" class="mayor-image"> 
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIpJotOZUAUfBQ6KilIwlVXo5imL74UsXzsF7mRqeE7w&s" alt="Mayor" class="mayor-image"> 
+        <p>Dear citizens,</p>
+        <p>As your mayor, I am committed to improving our community and enhancing the quality of life for all residents.</p>
+        <p>Your feedback is invaluable, and I encourage you to share your thoughts and concerns with us.</p>
+        <br>
+        <p>Best regards,
+        <br>
+        Mayor Süleyman Uluçay</p>
+        <br>
         <div class="latest-news">
             <div class="form-wrapper">
                 <div class="form-container-con">
@@ -386,6 +490,63 @@
             </div>
         </div>
     </div>
+
+
+<div class="complaints">
+    <!-- Language change button -->
+ <button class="language-button" onclick="changeLanguage()">EN</button>
+
+    <h1><span style="text-decoration: underline;">COMPLAINTS/REQUESTS</span></h1>
+    <p>IF YOU WOULD LIKE TO MAKE COMPLAINTS OR REQUESTS.</p>
+    <form id="complaintForm">
+        <div class="input-group">
+            <label for="name">NAME:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="input-group">
+            <label for="email">EMAIL ADDRESS:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input-group">
+            <label for="message">MESSAGE:</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <div class="input-group">
+            <label for="image">UPLOAD IMAGE (MAX SIZE 10MB):</label>
+            <input type="file" id="image" name="image" accept="image/*" size="10000000">
+        </div>
+        <div class="button-group">
+            <button type="submit" class="button send-message">SEND</button>
+        </div>
+    </form>
 </div>
+
+<script>
+    function changeLanguage() {
+        var languageButton = document.querySelector('.language-button');
+        if (languageButton.innerText === 'EN') {
+            languageButton.innerText = 'TR'; // Change button text to Turkish
+            // Change text content to Turkish
+            document.querySelector('h1').innerText = 'Şikayetler/Talepler';
+            document.querySelector('p').innerText = 'Şikayetlerde bulunmak veya taleplerde bulunmak istiyorsanız.';
+            document.querySelector('label[for="name"]').innerText = 'İSİM:';
+            document.querySelector('label[for="email"]').innerText = 'E-POSTA ADRESİ:';
+            document.querySelector('label[for="message"]').innerText = 'MESAJ:';
+            document.querySelector('label[for="image"]').innerText = 'RESİM YÜKLE (MAKS BOYUT 10MB):';
+            document.querySelector('.button.send-message').innerText = 'MESAJ GÖNDER';
+        } 
+        else {
+            languageButton.innerText = 'EN'; // Change button text to English
+            // Change text content to English
+            document.querySelector('h1').innerText = 'COMPLAINTS/REQUESTS';
+            document.querySelector('p').innerText = 'IF YOU WOULD LIKE TO MAKE COMPLAINTS OR REQUESTS.';
+            document.querySelector('label[for="name"]').innerText = 'NAME:';
+            document.querySelector('label[for="email"]').innerText = 'EMAIL ADDRESS:';
+            document.querySelector('label[for="message"]').innerText = 'MESSAGE:';
+            document.querySelector('label[for="image"]').innerText = 'UPLOAD IMAGE (MAX SIZE 10MB):';
+            document.querySelector('.button.send-message').innerText = 'SEND MESSAGE';
+        }
+    }
+</script>   
 </body>
 </html>
